@@ -1,0 +1,224 @@
+.header {
+    position: fixed;
+    background-color: white;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.upper-header {
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+    flex-shrink: 0;
+}
+
+.left-section {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1px;
+    align-items: center;
+    font-size: 18px;
+}
+
+.left-section div:hover {
+    cursor: pointer;
+}
+
+.left-item {
+    padding: 2px 20px;
+    user-select: none;
+}
+
+.left-item:hover {
+    background-color: #059862;
+    color: white;
+}
+
+.right-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.right-item {
+    padding: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+    user-select: none;
+}
+
+.right-item:hover {
+    cursor: pointer;
+}
+
+.right-item:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+.w3s-logo {
+    width: 55px;
+}
+
+.register-btn {
+    padding: 15px 5px;
+    color: white;
+    background-color: #059862;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.register-btn i {
+    margin-right: 2px;
+}
+
+.dark-mode {
+    padding: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: 3px;
+}
+
+.dark-mode:hover {
+    background-color: rgb(234, 234, 234);
+    border-radius: 20px;
+}
+
+.search-bar {
+    position: relative;
+}
+
+.search-bar input {
+    border-radius: 20px;
+    padding: 7px;
+    padding-left: 10px;
+    padding-right: 45px;
+
+}
+
+.search-icon {
+    position: absolute;
+    right: 20px;
+    top: 2px;
+    padding: 5px;
+}
+
+.lower-header {
+    background-color: rgb(65, 65, 65);
+    padding: 0px 5px;
+    display: flex;
+    column-gap: 15px;
+    text-transform: uppercase;
+    color: white;
+    overflow: hidden;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 500;
+}
+
+.lower-header div {
+    cursor: pointer;
+    padding: 5px 15px;
+}
+
+.lower-header p {
+    margin: 0;
+}
+
+.lower-header div:hover {
+    background-color: rgb(57, 56, 56);
+}
+
+.lower-header:hover .pervious,
+.lower-header:hover .next {
+    display: block;
+}
+
+
+.pervious {
+    position: absolute;
+    left: -5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+    user-select: none;
+    display: none;
+    box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.6);
+}
+
+
+.next {
+    position: absolute;
+    right: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(12, 11, 11);
+    cursor: pointer;
+    user-select: none;
+    display: none;
+    box-shadow: -2px 0px 2px rgba(0, 0, 0, 0.6);
+}
+
+.next:active {
+    background-color: rgb(99, 98, 98) !important;
+}
+
+.pervious:active {
+    background-color: rgb(99, 98, 98) !important;
+}
+
+
+
+
+.search-btn{
+    display: none;
+}
+
+#menu-banner{
+    overflow: scroll;
+    padding: 0;
+}
+#menu-banner div{
+    user-select: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 20px;
+    margin: 0;
+}
+
+#menu-banner div:hover{
+    background-color: white;
+    color: black;
+}
+
+#menu-banner div p{
+    padding: 0;
+}
+
+#sx{
+    display: none;
+}
+
+
+
+.searc-bar{
+    display: block;
+}
+.hide-element{
+    display: none;
+}
+.show-element{
+    display: block;
+}
+.element-state{
+    position: absolute;
+    display: block !important;
+    left: 10px;
+    right: 1px;
+}
