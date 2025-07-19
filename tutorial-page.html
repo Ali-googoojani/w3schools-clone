@@ -11,10 +11,11 @@
     <link rel="stylesheet" href="css/banners.css">
     <link rel="stylesheet" href="css/break.css">
     <link rel="stylesheet" href="css/break-tut.css">
-    <script src="js/lowerHeader.js" defer></script>
+    <script src="js/lower-header.js" defer></script>
     <script src="js/banners.js" defer></script>
     <script src="js/break.js" defer></script>
     <script src="js/menu-move.js" defer></script>
+    <script src="js/change-mode.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -130,7 +131,7 @@
                 <div class="search-btn" onclick="showSearchBar('search-bar-id')">
                     <i class="fa fa-search"></i>
                 </div>
-                <div class="dark-mode">
+                <div class="dark-mode" id="darkmode">
                     <i class="fa fa-star-half-full"></i>
                 </div>
             </div>
@@ -507,6 +508,10 @@
             const x = e.touches[0].pageX - slider.offsetLeft;
             const walk = (x - startX) * 1.5;
             slider.scrollLeft = scrollLeft - walk;
+        });
+                document.getElementById("darkmode").addEventListener("click", () => {
+                changeMode();
+
         });
     </script>
 </body>

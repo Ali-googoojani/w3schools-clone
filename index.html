@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="css/break.css">
     <script src="js/banners.js" defer></script>
     <script src="js/break.js" defer></script>
-    <script src="js/lowerHeader.js" defer></script>
+    <script src="js/lower-header.js" defer></script>
+    <script  defer src="js/change-mode.js"></script>
+    <script src="js/menu-move.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>W3schools</title>
 
@@ -126,7 +128,7 @@
                 <div class="search-btn" onclick="showSearchBar('search-bar-id')">
                     <i class="fa fa-search"></i>
                 </div>
-                <div class="dark-mode">
+                <div class="dark-mode" id="darkmode">
                     <i class="fa fa-star-half-full"></i>
                 </div>
             </div>
@@ -196,7 +198,7 @@
 
         <div class="lower-header" id="my-lower-header">
             <div class="pervious" onmousedown="perv()" onmouseup="moveOff()">
-                <p class="pervious-inside" >&#60;</p>
+                <p class="pervious-inside">&#60;</p>
             </div>
             <div>
                 <p>python</p>
@@ -342,7 +344,7 @@
 
                 <div class="second-section-right">
                     <div class="second-section-right-item">
-                        <h1>HTML Example:</h1>
+                        <h1 class="code-title">HTML Example:</h1>
                         <div class="code-container">
                             <span class="doctypecolor" style="color:slategray">&lt;!DOCTYPE html&gt;</span><br>
                             <span class="tagnamecolor" style="color:#905"><span class="tagcolor"
@@ -397,7 +399,7 @@
 
                 <div class="second-section-right">
                     <div class="second-section-right-item">
-                        <h1>CSS Example:</h1>
+                        <h1 class="code-title">CSS Example:</h1>
                         <div class="code-container">
                             body <span class="cssdelimitercolor" style="color:#999">{</span><span
                                 class="csspropertycolor" style="color:#d73a49"><br>
@@ -443,7 +445,7 @@
 
                 <div class="second-section-right">
                     <div class="second-section-right-item">
-                        <h1>JavaScript Example:</h1>
+                        <h1 class="code-title">JavaScript Example:</h1>
                         <div class="code-container">
                             <span class="tagnamecolor" style="color:#905"><span class="tagcolor"
                                     style="color:#999">&lt;</span>button<span class="attributecolor"
@@ -494,7 +496,7 @@
 
                 <div class="second-section-right">
                     <div class="second-section-right-item">
-                        <h1>Python Example:</h1>
+                        <h1 class="code-title">Python Example:</h1>
                         <div class="code-container">
                             <span class="jscolor" style="color:black"><span class="jsnumbercolor" style="color:#905">
                                 </span> <span class="jskeywordcolor" style="color:#005cc5">if</span> <span
@@ -525,7 +527,7 @@
 
                 <div class="second-section-right">
                     <div class="second-section-right-item">
-                        <h1>SQL Example:</h1>
+                        <h1 class="code-title">SQL Example:</h1>
                         <div class="code-container">
                             <span class="sqlnumbercolor" style="color:#905">
                             </span> <span class="sqlkeywordcolor" style="color:#005cc5">SELECT</span> * <span
@@ -708,6 +710,55 @@
             </section>
         </section>
     </main>
+
+    <script>
+
+
+        document.getElementById("darkmode").addEventListener("click", () => {
+                changeMode();
+
+        });
+
+         const slider = document.querySelector('#my-lower-header');
+
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+        });
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+        });
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 1.5;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        slider.addEventListener('touchstart', (e) => {
+            isDown = true;
+            startX = e.touches[0].pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('touchend', () => {
+            isDown = false;
+        });
+        slider.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            const x = e.touches[0].pageX - slider.offsetLeft;
+            const walk = (x - startX) * 1.5;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    </script>
 </body>
 
 </html>
